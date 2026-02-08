@@ -3,6 +3,23 @@
 # Sådan tjekker du vejret
 
 Har du heller ikke nogle vinduer i din lejlighed?
-Så kør den her app med `npm start` i root (`v-air/`) og læs det flotte dashboard.
+Så prøv den her app og læs det flotte dashboard!
 
 ![dash](/public/assets/dash.png)
+
+# Sådan kører du appen
+
+Step 1.
+Klon dette repo et vilkårligt sted på din pc (ikke downloads mappen)
+
+Step 2.
+Åben din yndlingsterminal (altså git bash) i den directory du har clonet repoet i, og kør `npm install`
+
+Step 3.
+Når den er done, kør `npm start --open` i samme terminal
+
+Step 4.
+???
+
+Step 5.
+Profit
