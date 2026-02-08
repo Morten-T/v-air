@@ -20,8 +20,9 @@ function Homepage() {
           <p className="text-2xl">
             Nedbør:
             {currentVair.rain > currentVair.snow
-              ? currentVair.rain + " mm regn"
-              : currentVair.snow + " cm sne"}
+              ? " " + currentVair.rain + " mm regn"
+              : " " + currentVair.snow + " cm sne"}
+            {/* lille hiccup pga. prettier fjerner mellemrum */}
           </p>
           <p className="text-2xl">
             Vindhastighed: {currentVair.windSpeed} km/t
