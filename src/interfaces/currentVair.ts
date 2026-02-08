@@ -1,5 +1,6 @@
 interface CurrentVair {
     temperature: number;
+    apparent_temperature: number,
     humidity?: number;
     rain: number;
     snow: number;
