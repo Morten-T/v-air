@@ -5,7 +5,7 @@
 Har du heller ikke nogle vinduer i din lejlighed?
 Så prøv den her app og læs det flotte dashboard!
 
-![dash](/public/assets/dash.png)
+![dash](/public/assets/dash_2.png)
 
 # Sådan kører du appen
 
@@ -17,9 +17,3 @@ Step 2.
 
 Step 3.
 Når den er done, kør `npm start --open` i samme terminal
-
-Step 4.
-???
-
-Step 5.
-Profit

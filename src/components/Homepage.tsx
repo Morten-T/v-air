@@ -4,6 +4,7 @@ import VairDay from "./VairDay";
 import CurrentVair from "../interfaces/currentVair";
 import { fetchCurrentWeather, fetchDailyWeather } from "../api/WeatherApi";
 import CurrentDay from "./CurrentDay";
+import byskilt from "../assets/AarhusByskilt.png";
 
 // starter ud med homepage for at have et skelet jeg kan proppe noget data i
 function Homepage() {
@@ -52,9 +53,20 @@ function Homepage() {
   return (
     <div className="homepage flex flex-col pl-4 pt-8 w-screen h-screen gap-[3vh]">
       {/* Vejret i dag */}
-      <div className="flex flex-row gap-4">
-        <CurrentDay currentVair={currentVair} />
-        <p className="text-[6vh]">{downpurType}</p>
+      <div className="flex flex-row items-center">
+        <div className="flex flex-row gap-4">
+          <CurrentDay currentVair={currentVair} />
+          <p className="text-[6vh]">{downpurType}</p>
+        </div>
+
+        <div className="flex-1 flex justify-center">
+          <img
+            src={byskilt}
+            alt="Aarhus-byskilt"
+            width={500}
+            className="object-contain"
+          />
+        </div>
       </div>
       {/* Uge prognose */}
       <h2 className="text-[6vh] pl-8">Kommende uge</h2>
