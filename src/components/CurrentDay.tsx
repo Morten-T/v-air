@@ -1,3 +1,4 @@
+import { DecodeWeathercode } from "../api/utils";
 import CurrentVair from "../interfaces/currentVair";
 import Vair from "../interfaces/vair";
 
@@ -45,6 +46,14 @@ function CurrentDay({ currentVair }: CurrentDayProps) {
           <p className="text-[3vh]">Ingen nedbør</p>
         )}
       </div>
+      {currentVair.condition && (
+        <p className="text-[3vh]">
+          Vejrforhold: {DecodeWeathercode(currentVair.condition)}
+        </p>
+      )}
+      {!currentVair.condition && (
+        <p className="text-[3vh]">Vejrforhold: Ukendt</p>
+      )}
     </div>
   );
 }

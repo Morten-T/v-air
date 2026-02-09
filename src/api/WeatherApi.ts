@@ -1,6 +1,7 @@
 import { fetchWeatherApi } from "openmeteo";
 import CurrentVair from "../interfaces/currentVair";
 import Vair from "../interfaces/vair";
+import { DecodeWeathercode } from "./utils";
 
 // CAPITAL for konstanter
 const AARHUS_COORDINATES = {
@@ -19,6 +20,7 @@ async function fetchCurrentWeather() {
       "wind_speed_10m",
       "rain",
       "snowfall",
+      "weather_code",
     ],
     timezone: "Europe/Berlin",
   };
@@ -39,6 +41,7 @@ async function fetchCurrentWeather() {
       wind_speed_10m: current.variables(3)!.value(),
       rain: current.variables(4)!.value(),
       snowfall: current.variables(5)!.value(),
+      weather_code: current.variables(6)!.value(),
     },
   };
   // rå data
@@ -50,6 +53,7 @@ async function fetchCurrentWeather() {
     `\nCurrent wind_speed_10m: ${weatherData.current.wind_speed_10m}`,
     `\nCurrent rain: ${weatherData.current.rain}`,
     `\nCurrent snowfall: ${weatherData.current.snowfall}`,
+    `\nCurrent weather_code: ${weatherData.current.weather_code}`,
   );
   const fetchedCurrentVair: CurrentVair = {
     temperature: Math.round(weatherData.current.temperature_2m),
@@ -58,6 +62,7 @@ async function fetchCurrentWeather() {
     snow: weatherData.current.snowfall,
     rain: weatherData.current.rain,
     windSpeed: Math.round(weatherData.current.wind_speed_10m),
+    condition: weatherData.current.weather_code,
   };
 
   return fetchedCurrentVair;
