@@ -1,4 +1,4 @@
-interface CurrentVair {
+interface CurrentVairData {
   temperature: number;
   apparent_temperature: number;
   condition?: number;
@@ -8,4 +8,4 @@ interface CurrentVair {
   windSpeed: number;
 }
 
-export default CurrentVair;
+export default CurrentVairData;

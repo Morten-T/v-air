@@ -1,6 +1,6 @@
 import { fetchWeatherApi } from "openmeteo";
-import CurrentVair from "../interfaces/currentVair";
-import Vair from "../interfaces/vair";
+import CurrentVairData from "../interfaces/currentVair";
+import WeeklyVairData from "../interfaces/weekVair";
 import { DecodeWeathercode } from "./utils";
 
 // CAPITAL for konstanter
@@ -55,7 +55,7 @@ async function fetchCurrentWeather() {
     `\nCurrent snowfall: ${weatherData.current.snowfall}`,
     `\nCurrent weather_code: ${weatherData.current.weather_code}`,
   );
-  const fetchedCurrentVair: CurrentVair = {
+  const fetchedCurrentVair: CurrentVairData = {
     temperature: Math.round(weatherData.current.temperature_2m),
     apparent_temperature: Math.round(weatherData.current.apparent_temperature),
     humidity: Math.round(weatherData.current.relative_humidity_2m),
@@ -111,7 +111,7 @@ async function fetchDailyWeather() {
   };
   // rå ugedata
   console.log(console.log("\nDaily Data: \n", weatherData.daily));
-  const fetchedDailyVair: Vair[] = weatherData.daily.time.map(
+  const fetchedDailyVair: WeeklyVairData[] = weatherData.daily.time.map(
     (time, index) => ({
       time:
         time

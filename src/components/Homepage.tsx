@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Vair from "../interfaces/vair";
+import WeeklyVairData from "../interfaces/weekVair";
 import VairDay from "./VairDay";
-import CurrentVair from "../interfaces/currentVair";
+import CurrentVairData from "../interfaces/currentVair";
 import { fetchCurrentWeather, fetchDailyWeather } from "../api/WeatherApi";
 import CurrentDay from "./CurrentDay";
 import byskilt from "../assets/AarhusByskilt.png";
@@ -10,7 +10,7 @@ import DownpourEmoji from "./DownpourEmoji";
 
 // starter ud med homepage for at have et skelet jeg kan proppe noget data i
 function Homepage() {
-  const dummyCurrentVair: CurrentVair = {
+  const dummyCurrentVair: CurrentVairData = {
     temperature: 0,
     apparent_temperature: 0,
     humidity: 0,
@@ -19,7 +19,7 @@ function Homepage() {
     windSpeed: -1,
     condition: 0,
   };
-  const dummyVair: Vair = {
+  const dummyWeeklyVair: WeeklyVairData = {
     time: "Error",
     max_temperature: 0,
     min_temperature: 0,
@@ -28,8 +28,9 @@ function Homepage() {
     windSpeed: -1,
   };
 
-  const [forecast, setForecast] = useState<Vair[]>([]);
-  const [currentVair, setCurrentVair] = useState<CurrentVair>(dummyCurrentVair);
+  const [forecast, setForecast] = useState<WeeklyVairData[]>([]);
+  const [currentVair, setCurrentVair] =
+    useState<CurrentVairData>(dummyCurrentVair);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -46,7 +47,7 @@ function Homepage() {
       } catch (error) {
         console.error("Error fetching weather: ", error);
         setError("Fejl i WeatherData fetch, tjek konsollen");
-        // setForecast(Array(7).fill(dummyVair));
+        // setForecast(Array(7).fill(dummyWeeklyVair));
       } finally {
         setIsLoading(false);
       }

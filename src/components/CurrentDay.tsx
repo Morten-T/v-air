@@ -1,9 +1,9 @@
 import { DecodeWeathercode } from "../api/utils";
-import CurrentVair from "../interfaces/currentVair";
-import Vair from "../interfaces/vair";
+import CurrentVairData from "../interfaces/currentVair";
+import WeeklyVairData from "../interfaces/weekVair";
 
 interface CurrentDayProps {
-  currentVair: CurrentVair;
+  currentVair: CurrentVairData;
 }
 
 function CurrentDay({ currentVair }: CurrentDayProps) {

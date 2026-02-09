@@ -1,7 +1,7 @@
-import Vair from "../interfaces/vair";
+import WeeklyVairData from "../interfaces/weekVair";
 
 interface VairDayProps {
-  vair: Vair;
+  vair: WeeklyVairData;
 }
 
 function VairDay({ vair }: VairDayProps) {
@@ -27,6 +27,7 @@ function VairDay({ vair }: VairDayProps) {
             {/* lille hiccup pga. prettier fjerner mellemrum */}
           </p>
         )}
+        {!downPour && <p className="text-[2.5vh]">Ingen nedbør</p>}
       </div>
     </div>
   );
