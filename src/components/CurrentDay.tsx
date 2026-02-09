@@ -22,7 +22,7 @@ function CurrentDay({ currentVair }: CurrentDayProps) {
       </h2>
       <div className="flex flex-col gap-2">
         <p className="text-[6vh]">
-          Temperatur {currentVair.temperature}° - Føles som{" "}
+          Temperatur {currentVair.temperature}° | Føles som{" "}
           {currentVair.apparent_temperature}°
         </p>
         <p className="text-[5vh]"></p>
