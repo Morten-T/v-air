@@ -43,11 +43,19 @@ function Homepage() {
   }, []);
 
   const currentDownpour: boolean = currentVair.rain > 0 || currentVair.snow > 0;
+  const downpurType: string = currentDownpour
+    ? currentVair.rain > currentVair.snow
+      ? "regn 🌧️"
+      : "sne ❄️"
+    : "☀";
 
   return (
     <div className="homepage flex flex-col pl-4 pt-8 w-screen h-screen gap-[3vh]">
       {/* Vejret i dag */}
-      <CurrentDay currentVair={currentVair} />
+      <div className="flex flex-row gap-4">
+        <CurrentDay currentVair={currentVair} />
+        <p className="text-[6vh]">{downpurType}</p>
+      </div>
       {/* Uge prognose */}
       <h2 className="text-[6vh] pl-8">Kommende uge</h2>
       <div className="week pt-2 px-4 gap-4 flex flex-row flex-wrap lg:flex-nowrap overflow-hidden">
