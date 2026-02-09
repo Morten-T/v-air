@@ -6,6 +6,7 @@ import { fetchCurrentWeather, fetchDailyWeather } from "../api/WeatherApi";
 import CurrentDay from "./CurrentDay";
 import byskilt from "../assets/AarhusByskilt.png";
 import { DecodeWeatherEmoji } from "../api/utils";
+import DownpourEmoji from "./DownpourEmoji";
 
 // starter ud med homepage for at have et skelet jeg kan proppe noget data i
 function Homepage() {
@@ -53,11 +54,6 @@ function Homepage() {
     fetchData();
   }, []);
 
-  const currentDownpour: boolean = currentVair.rain > 0 || currentVair.snow > 0;
-  // const downpurType = DecodeWeatherEmoji(dummyCurrentVair.condition!); // for at demonstrere forskellige forecast emojis
-  const downpurType = currentVair.condition
-    ? DecodeWeatherEmoji(currentVair.condition)
-    : "❓";
   return (
     <div className="homepage flex flex-col pl-4 pt-8 w-screen h-screen gap-[3vh]">
       {isLoading && (
@@ -69,7 +65,7 @@ function Homepage() {
         {!isLoading && !error && (
           <div className="flex flex-row gap-4">
             <CurrentDay currentVair={currentVair} />
-            <p className="text-[14vh]">{downpurType}</p>
+            <DownpourEmoji condition={currentVair.condition!} />
           </div>
         )}
         <div className="flex-1 flex justify-center">
