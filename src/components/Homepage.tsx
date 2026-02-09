@@ -35,8 +35,8 @@ function Homepage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const fetchedCurrentVair = await fetchCurrentWeather();
-        // setCurrentVair(fetchedCurrentVair);
+        const fetchedCurrentVair = await fetchCurrentWeather();
+        setCurrentVair(fetchedCurrentVair);
 
         const fetchedDailyVair = await fetchDailyWeather();
         setForecast(fetchedDailyVair);
@@ -50,7 +50,7 @@ function Homepage() {
   const currentDownpour: boolean = currentVair.rain > 0 || currentVair.snow > 0;
 
   return (
-    <div>
+    <div className="homepage flex flex-col pl-4 pt-8 w-screen h-screen box-border border-4 border-yellow-300">
       <div className="flex flex-col p-8 gap-4">
         <h2 className="text-6xl">
           {ugedag.charAt(0).toUpperCase() + ugedag.slice(1)} den {dato}
@@ -82,7 +82,7 @@ function Homepage() {
       </div>
       {/* Uge prognose */}
       <h2 className="text-6xl p-8">Kommende uge</h2>
-      <div className="pt-8 pl-4 gap-4 flex flex-row">
+      <div className="week pt-8 pl-4 gap-4 flex flex-row flex-wrap lg:flex-nowrap overflow-hidden">
         {forecast.slice(1).map((vair, index) => (
           <VairDay key={index} vair={vair} />
         ))}
