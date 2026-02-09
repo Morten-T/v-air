@@ -8,7 +8,7 @@ function VairDay({ vair }: VairDayProps) {
   const downPour: boolean = vair.rain > 0 || vair.snow > 0;
   const stableTemp: boolean = vair.max_temperature === vair.min_temperature;
   return (
-    <div className="flex flex-col p-[1.5vh] gap-[1vh] box-border border-2 bg-slate-600 rounded-lg w-[32vh] h-[36vh] min-w-fit">
+    <div className="flex flex-col p-[1.5vh] gap-[1vh] box-border border border-slate-500/60 bg-slate-700/80 text-slate-100 rounded-2xl w-[32vh] h-[36vh] min-w-fit shadow-lg hover:shadow-xl hover:-translate-y-1 transition">
       {/* <div className="text-black box-border border-4 bg-slate-50">❤</div> */}
       <h2 className="text-[5vh]">{vair.time}</h2>
       <div className="flex flex-col gap-[0.5vh]">
