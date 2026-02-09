@@ -13,6 +13,5 @@ Derudover har "`CurrentDay`" delen og "`VairDay`" (altså ugeprognosen) ligelede
 
 # Future improvements
 
-- Lave en smartere måde at capitalize weekdays på
 - Tilføje et Phone layout
 - Translations til engelsk, små flag til at vælge sprog
