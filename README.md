@@ -17,3 +17,7 @@ Step 2.
 
 Step 3.
 Profit
+
+## Sådan kører du jest tests
+
+Kør `npm test` i terminalen i samme folder
