@@ -20,11 +20,13 @@ function CurrentDay({ currentVair }: CurrentDayProps) {
       <h2 className="text-[6vh]">
         {ugedag.charAt(0).toUpperCase() + ugedag.slice(1)} den {dato}
       </h2>
-      <div className="flex flex-col gap-2 ">
+      <div className="flex flex-col gap-2">
         <p className="text-[6vh]">Temperatur {currentVair.temperature}°</p>
         <p className="text-[5vh]">
           Føles som {currentVair.apparent_temperature}°
         </p>
+      </div>
+      <div className="flex flex-row flex-wrap gap-x-8 gap-y-2 mt-2">
         <p className="text-[3vh]">
           Vindhastighed: {currentVair.windSpeed} km/t
         </p>
@@ -39,9 +41,7 @@ function CurrentDay({ currentVair }: CurrentDayProps) {
             {/* lille hiccup pga. prettier fjerner mellemrum */}
           </p>
         ) : (
-          <div>
-            <p className="text-[3vh]">Ingen nedbør</p>
-          </div>
+          <p className="text-[3vh]">Ingen nedbør</p>
         )}
       </div>
     </div>
