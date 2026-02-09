@@ -45,12 +45,12 @@ function Homepage() {
   const currentDownpour: boolean = currentVair.rain > 0 || currentVair.snow > 0;
 
   return (
-    <div className="homepage flex flex-col pl-4 pt-8 w-screen h-screen ">
+    <div className="homepage flex flex-col pl-4 pt-8 w-screen h-screen gap-[3vh]">
       {/* Vejret i dag */}
       <CurrentDay currentVair={currentVair} />
       {/* Uge prognose */}
       <h2 className="text-[6vh] pl-8">Kommende uge</h2>
-      <div className="week pt-6 pl-4 gap-4 flex flex-row flex-wrap lg:flex-nowrap overflow-hidden">
+      <div className="week pt-2 px-4 gap-4 flex flex-row flex-wrap lg:flex-nowrap overflow-hidden">
         {forecast.slice(1).map((vair, index) => (
           <VairDay key={index} vair={vair} />
         ))}
